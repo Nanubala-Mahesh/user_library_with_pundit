@@ -3,7 +3,12 @@ class LibrariesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @libraries = Library.all
+    if params[:file]
+      Library.import(params[:file])
+      redirect_to root_url
+    else
+      @libraries = Library.all
+    end
   end
 
   def show
@@ -50,6 +55,13 @@ class LibrariesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def import_csv
+      Library.import(params[:file])
+      redirect_to root_url
+  end
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

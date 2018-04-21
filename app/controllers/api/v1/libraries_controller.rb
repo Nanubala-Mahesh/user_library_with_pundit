@@ -5,7 +5,7 @@ class Api::V1::LibrariesController < ApplicationController
 
 	def index
 		@libraries = Library.all
-		binding.pry
+		# binding.pry
 		render :status => 400,
 		      	:json => {:message => 'all', :library => @libraries}
 	end

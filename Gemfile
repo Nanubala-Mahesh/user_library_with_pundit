@@ -6,6 +6,10 @@ gem 'rails', '4.2.3'
 gem 'devise'
 gem 'pry-rails', '~> 0.3.4'
 gem "pundit"
+gem 'devise_invalidatable'
+gem 'devise_invitable', '~> 1.7.0'
+
+
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'

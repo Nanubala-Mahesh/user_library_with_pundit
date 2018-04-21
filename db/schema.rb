@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180413034032) do
+ActiveRecord::Schema.define(version: 20180421073158) do
 
   create_table "libraries", force: :cascade do |t|
     t.string   "name"
@@ -24,6 +24,18 @@ ActiveRecord::Schema.define(version: 20180413034032) do
     t.integer  "in_possession_of"
     t.string   "title"
   end
+
+  create_table "user_sessions", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "session_id"
+    t.string   "ip"
+    t.string   "user_agent"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_sessions", ["session_id"], name: "index_user_sessions_on_session_id", unique: true
+  add_index "user_sessions", ["user_id"], name: "index_user_sessions_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -42,9 +54,20 @@ ActiveRecord::Schema.define(version: 20180413034032) do
     t.text     "contact"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "invitation_token"
+    t.datetime "invitation_created_at"
+    t.datetime "invitation_sent_at"
+    t.datetime "invitation_accepted_at"
+    t.integer  "invitation_limit"
+    t.integer  "invited_by_id"
+    t.string   "invited_by_type"
+    t.integer  "invitations_count",      default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["invitation_token"], name: "index_users_on_invitation_token", unique: true
+  add_index "users", ["invitations_count"], name: "index_users_on_invitations_count"
+  add_index "users", ["invited_by_id"], name: "index_users_on_invited_by_id"
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end

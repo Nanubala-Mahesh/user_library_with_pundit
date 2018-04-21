@@ -1,6 +1,7 @@
 class Api::V1::RegistrationsController < ApplicationController
 	# skip_before_action :verify_authenticity_token
 	def sign_up
+		# binding.pry
 	    if params[:email].nil?
 	      render :status => 400,
 	      :json => {:message => 'email required.'}
@@ -73,6 +74,16 @@ class Api::V1::RegistrationsController < ApplicationController
 		    end
 	    end			
 	end	
+
+	def logout
+		if params[:email]
+			@user = User.find_by_email(params[:email])
+			@user.update(:access_token => nil)
+			render :json => {:user => @user, message: 'successfully logout' }
+		else
+			render :json => {message: 'provide corrent email'}
+		end		
+	end
 
   private
 

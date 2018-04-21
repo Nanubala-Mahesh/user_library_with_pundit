@@ -71,7 +71,21 @@ class Api::V2::RegistrationsController < ApplicationController
 		    	render :json => {:message => 'wrong email' }
 		    end
 	    end			
-	end	
+	end
+
+	def invite_user
+		if params[:email]
+			@user = User.find_by_email(params[:email])
+			unless @user
+				User.invite!(:email => params[:email], :name => "test")
+				render :json => {:message => 'invited successfully' }
+			else
+				render :json => {:message => 'email exit'}
+			end
+		else
+		    render :json => {:message => 'wrong email' }
+		end
+	end
 
   private
 

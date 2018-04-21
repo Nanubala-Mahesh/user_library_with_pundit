@@ -23,6 +23,10 @@ class LibraryPolicy < ApplicationPolicy
 
   def new? ; user_is_owner_of_record? ; end
 
+  def index
+    true
+  end
+  
   def create? 	
     if admin?
       admin?

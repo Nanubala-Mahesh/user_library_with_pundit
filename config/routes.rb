@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
 
-  resources :libraries
-  devise_for :normals, :admins, :users
+  resources :libraries do
+    collection { post :import_csv}
+  end
+  devise_for :users, controllers: {
+        sessions: 'users/sessions',
+        registrations: 'users/registrations'
+      }
 
 
+  root to: 'libraries#index'
 
   # devise_for :users
   class ApiConstraints
@@ -14,7 +20,8 @@ Rails.application.routes.draw do
     end
 
     def matches?(req)
-      @default
+      # binding.pry
+      @default || req.headers['Accept'].include?("application/v#{@version}")
     end
   end
 
@@ -22,27 +29,34 @@ Rails.application.routes.draw do
 
 
   namespace :api do
-    namespace :v2, format: :json, constraints: ApiConstraints.new(version: 2, default: true) do
-        devise_for :users, :controllers => { registrations: 'api/v2/registrations' }
+      devise_for :users, :controllers => { registrations: 'api/registrations' }
+    scope module: :v2, format: :json, constraints: ApiConstraints.new(version: 2) do
+        # devise_for :users, :controllers => { registrations: 'api/registrations' }
         devise_scope :user do
           post 'sign_up', to: 'registrations'
           post 'sign_in', to: 'registrations', defaults: {format: :json}
+          post 'logout', to: 'registrations', defaults: {format: :json}
+          post 'invite_user', to: 'registrations', defaults: {format: :json}
+
         end
       post 'libraries/purchase'
       resources :libraries
 
     end
-  end
+  # end
 
-  namespace :api do
-    namespace :v1, format: :json, constraints: ApiConstraints.new(version: 1, default: true) do
+  # namespace :api do
+    scope module: :v1, format: :json, constraints: ApiConstraints.new(version: 1, default: true) do
 
-      devise_for :users, :controllers => { registrations: 'api/v1/registrations' }
+      # devise_for :users, :controllers => { registrations: 'api/registrations' }
      
 
       devise_scope :user do
         post 'sign_up', to: 'registrations', defaults: {format: :json}
         post 'sign_in', to: 'registrations', defaults: {format: :json}
+        post 'logout', to: 'registrations', defaults: {format: :json}       
+
+
       end
       post 'libraries/purchase'
       resources :libraries

@@ -59,6 +59,12 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
+    devise_invalidatable (0.1.0)
+      devise
+      rails
+    devise_invitable (1.7.4)
+      actionmailer (>= 4.1.0)
+      devise (>= 4.0.0)
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.23)
@@ -178,6 +184,8 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   devise
+  devise_invalidatable
+  devise_invitable (~> 1.7.0)
   jbuilder (~> 2.0)
   jquery-rails
   pry-rails (~> 0.3.4)

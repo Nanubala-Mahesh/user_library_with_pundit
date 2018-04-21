@@ -57,7 +57,7 @@ class LibrariesController < ApplicationController
   end
 
   def import_csv
-      Library.import(params[:file])
+      current_user.libraries.import(params[:file])
       redirect_to root_url
   end
 

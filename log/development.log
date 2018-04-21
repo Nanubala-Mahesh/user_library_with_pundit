@@ -38101,3 +38101,248 @@ Migrating to DeviseInvitableAddToUsers (20180421073158)
             FROM sqlite_temp_master
             WHERE name='index_users_on_email' AND type='index'
 [0m
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'registrations'` to `controller: 'registrations'`. (called from block (4 levels) in <top (required)> at /home/holanta/assignment/config/routes.rb:36)
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'registrations'` to `controller: 'registrations'`. (called from block (4 levels) in <top (required)> at /home/holanta/assignment/config/routes.rb:37)
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'registrations'` to `controller: 'registrations'`. (called from block (4 levels) in <top (required)> at /home/holanta/assignment/config/routes.rb:38)
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'registrations'` to `controller: 'registrations'`. (called from block (4 levels) in <top (required)> at /home/holanta/assignment/config/routes.rb:39)
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'registrations'` to `controller: 'registrations'`. (called from block (4 levels) in <top (required)> at /home/holanta/assignment/config/routes.rb:55)
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'registrations'` to `controller: 'registrations'`. (called from block (4 levels) in <top (required)> at /home/holanta/assignment/config/routes.rb:56)
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'registrations'` to `controller: 'registrations'`. (called from block (4 levels) in <top (required)> at /home/holanta/assignment/config/routes.rb:57)
+  [1m[36mSQL (71.4ms)[0m  [1mDELETE FROM "libraries"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-21 15:14:11 +0530
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'registrations'` to `controller: 'registrations'`. (called from block (4 levels) in <top (required)> at /home/holanta/assignment/config/routes.rb:36)
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'registrations'` to `controller: 'registrations'`. (called from block (4 levels) in <top (required)> at /home/holanta/assignment/config/routes.rb:37)
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'registrations'` to `controller: 'registrations'`. (called from block (4 levels) in <top (required)> at /home/holanta/assignment/config/routes.rb:38)
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'registrations'` to `controller: 'registrations'`. (called from block (4 levels) in <top (required)> at /home/holanta/assignment/config/routes.rb:39)
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'registrations'` to `controller: 'registrations'`. (called from block (4 levels) in <top (required)> at /home/holanta/assignment/config/routes.rb:55)
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'registrations'` to `controller: 'registrations'`. (called from block (4 levels) in <top (required)> at /home/holanta/assignment/config/routes.rb:56)
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'registrations'` to `controller: 'registrations'`. (called from block (4 levels) in <top (required)> at /home/holanta/assignment/config/routes.rb:57)
+Processing by LibrariesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+Completed 401 Unauthorized in 8ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-21 15:14:11 +0530
+Processing by Users::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (1.3ms)
+  Rendered users/sessions/new.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 51ms (Views: 40.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-04-21 15:14:12 +0530
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gCfkrXpRSj4bK5xwILO5sDRekYLE+u67XfSL0te50gUTPEO5ZVKCe2y+E4faB8T9AIXU3luRhj1+bD1pshEFVw==", "user"=>{"email"=>"mahesh1@holanta.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "mahesh1@holanta.com"]]
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.3ms)
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gCfkrXpRSj4bK5xwILO5sDRekYLE+u67XfSL0te50gUTPEO5ZVKCe2y+E4faB8T9AIXU3luRhj1+bD1pshEFVw==", "user"=>{"email"=>"mahesh1@holanta.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered users/shared/_links.html.erb (0.4ms)
+  Rendered users/sessions/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 169ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-04-21 15:14:14 +0530
+Processing by Users::RegistrationsController#new as HTML
+  Rendered users/shared/_links.html.erb (0.5ms)
+  Rendered users/registrations/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 23ms (Views: 21.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-04-21 15:14:22 +0530
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k56U6HgvLWPhDAXdbWoc6T8CjvjNEsWMY6R16aFzEqAAhTP8ZyzlJpaZiiqX3mGkC9nLpFJ5rQpAPMNSxNvF8g==", "user"=>{"email"=>"mahesh.bablu17@gmail.com", "name"=>"Mahesh", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name", "created_at", "updated_at", "confirmation_token", "confirmation_sent_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "mahesh.bablu17@gmail.com"], ["encrypted_password", "$2a$11$OaHj8q5Q4Ps9fZP1Bud3iOkTb5Puh4SAXU948wmc7IXPAQLyZxtQi"], ["name", "Mahesh"], ["created_at", "2018-04-21 09:44:22.340417"], ["updated_at", "2018-04-21 09:44:22.340417"], ["confirmation_token", "xYgVhwukCB7AYYBEH_Gp"], ["confirmation_sent_at", "2018-04-21 09:44:22.340677"]]
+  [1m[35m (81.0ms)[0m  commit transaction
+  Rendered /home/holanta/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/devise-4.4.3/app/views/devise/mailer/confirmation_instructions.html.erb (0.7ms)
+
+Devise::Mailer#confirmation_instructions: processed outbound mail in 376.3ms
+
+Sent mail to mahesh.bablu17@gmail.com (5037.6ms)
+Date: Sat, 21 Apr 2018 15:14:22 +0530
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: mahesh.bablu17@gmail.com
+Message-ID: <5adb07f6c4bfb_51b53fe5b03b535095ef@holanta-HP-EliteBook-840-G1.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome mahesh.bablu17@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=xYgVhwukCB7AYYBEH_Gp">Confirm my account</a></p>
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 5668ms (ActiveRecord: 81.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-21 15:14:27 +0530
+Processing by LibrariesController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-21 15:14:27 +0530
+Processing by Users::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (0.6ms)
+  Rendered users/sessions/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 21ms (Views: 18.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-04-21 15:14:31 +0530
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PyrKD+J80hbxJL4S5G5GDH9xsugNZTH8kL5JP92tO8esMW0b/X8aU4axMeUe2jtBS6r3tJIOWXqzJv+EuAXslQ==", "user"=>{"email"=>"mahesh1@holanta.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "mahesh1@holanta.com"]]
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.1ms)
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PyrKD+J80hbxJL4S5G5GDH9xsugNZTH8kL5JP92tO8esMW0b/X8aU4axMeUe2jtBS6r3tJIOWXqzJv+EuAXslQ==", "user"=>{"email"=>"mahesh1@holanta.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered users/shared/_links.html.erb (0.4ms)
+  Rendered users/sessions/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 164ms (Views: 15.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-04-21 15:14:37 +0530
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NLbgADkM0JjQJx1c/ma7sKlHQFZq9ohCRHa2QUfHGnenrUcUJg8Y3aeykqsE0sb9nZwFCvWd4MRn7gD6Im/NJQ==", "user"=>{"email"=>"mahesh.bablu17@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "mahesh.bablu17@gmail.com"]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "user_sessions" WHERE "user_sessions"."session_id" = ?[0m  [["session_id", "46e84f4281343b7a1a9d4a9a33271a7931d984e023c36b760ded6bb798be4f68741cc03b287f49fc45def70c39bb5797ba30394daf6d8edf47f93884575643b2dea88575e16afffcfe7f116859cac6ddab98823686b8cbfb755fe20cf4b821fc34ca5a829e4735c522c5bd28a391a245639c8eb1f13dd03d4a72bbcd7cf717"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Completed 401 Unauthorized in 151ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-21 15:14:37 +0530
+Processing by Users::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (0.4ms)
+  Rendered users/sessions/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "confirmed_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["confirmed_at", "2018-04-21 00:00:00.000000"], ["updated_at", "2018-04-21 09:45:00.383510"], ["id", 1]]
+  [1m[35m (81.9ms)[0m  commit transaction
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-04-21 15:15:01 +0530
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KKkgsOsQE9zrRyT/xy70bYak1e8V6Gz9828leVn91zm7soek9BPbmZzSqwg9mokgsn+Qs4qDBHvQ95PCPFUAaw==", "user"=>{"email"=>"mahesh1@holanta.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "mahesh1@holanta.com"]]
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.1ms)
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KKkgsOsQE9zrRyT/xy70bYak1e8V6Gz9828leVn91zm7soek9BPbmZzSqwg9mokgsn+Qs4qDBHvQ95PCPFUAaw==", "user"=>{"email"=>"mahesh1@holanta.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered users/shared/_links.html.erb (0.3ms)
+  Rendered users/sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 161ms (Views: 13.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-04-21 15:15:04 +0530
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DFXFbC5pAS9mPFrq8KYcGx0Y+Of+ZOIlXE1EeWi3re+fTmJ4MWrJahGp1R0KEmFWKcO9u2EPiqN/1fLCDR96vQ==", "user"=>{"email"=>"mahesh.bablu17@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "mahesh.bablu17@gmail.com"]]
+Completed 401 Unauthorized in 148ms (ActiveRecord: 0.1ms)
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DFXFbC5pAS9mPFrq8KYcGx0Y+Of+ZOIlXE1EeWi3re+fTmJ4MWrJahGp1R0KEmFWKcO9u2EPiqN/1fLCDR96vQ==", "user"=>{"email"=>"mahesh.bablu17@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered users/shared/_links.html.erb (0.5ms)
+  Rendered users/sessions/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 164ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-04-21 15:15:07 +0530
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HbaOlBWqRzBqaCyDbKWjnppVl6hoFePSLhli76JM07qOrSmACqmPdR39o3SWEd7Tro7S9Pd+i1QNgdRUx+QE6A==", "user"=>{"email"=>"mahesh.bablu17@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "mahesh.bablu17@gmail.com"]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "user_sessions" WHERE "user_sessions"."session_id" = ?[0m  [["session_id", "46e84f4281343b7a1a9d4a9a33271a7931d984e023c36b760ded6bb798be4f68741cc03b287f49fc45def70c39bb5797ba30394daf6d8edf47f93884575643b2dea88575e16afffcfe7f116859cac6ddab98823686b8cbfb755fe20cf4b821fc34ca5a829e4735c522c5bd28a391a245639c8eb1f13dd03d4a72bbcd7cf717"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "user_sessions" ("user_id", "session_id", "ip", "user_agent", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["session_id", "7b1c30c75758c498312019291fae9a4d93425d276c37035e65a6170837b3de08264b1ec434442aa6c67840a7eb8169b5cfc01439cc90345f907c5aa06e5193f45e30b74d6daf41bc2426b18ab10f7bc3ea2f229bbab0fa5b1005d6e8f0fd7e8edea37920d09bc62dd882e19af427824125c869fa87caa01d28291504a81161"], ["ip", "127.0.0.1"], ["user_agent", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"], ["created_at", "2018-04-21 09:45:07.427575"], ["updated_at", "2018-04-21 09:45:07.427575"]]
+  [1m[35m (78.5ms)[0m  commit transaction
+  [1m[36mUserSession Load (0.7ms)[0m  [1mSELECT "user_sessions".* FROM "user_sessions" WHERE "user_sessions"."user_id" = ?  ORDER BY created_at desc LIMIT -1 OFFSET 10[0m  [["user_id", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 251ms (ActiveRecord: 80.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-21 15:15:07 +0530
+Processing by LibrariesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUserSession Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "user_sessions" WHERE "user_sessions"."user_id" = ? AND "user_sessions"."session_id" = ? LIMIT 1[0m  [["user_id", 1], ["session_id", "7b1c30c75758c498312019291fae9a4d93425d276c37035e65a6170837b3de08264b1ec434442aa6c67840a7eb8169b5cfc01439cc90345f907c5aa06e5193f45e30b74d6daf41bc2426b18ab10f7bc3ea2f229bbab0fa5b1005d6e8f0fd7e8edea37920d09bc62dd882e19af427824125c869fa87caa01d28291504a81161"]]
+  [1m[35mLibrary Load (0.2ms)[0m  SELECT "libraries".* FROM "libraries"
+  Rendered libraries/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 18ms (Views: 13.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/libraries/import_csv" for 127.0.0.1 at 2018-04-21 15:15:13 +0530
+Processing by LibrariesController#import_csv as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QtA9K/pjk7djvldgOGHsG4POs7AqKztpx3o3dyoxfVITNTrO7F7GVHOo0IXY1+6t7YsAubVG0AlZ8B7J0RrxYw==", "file"=>#<ActionDispatch::Http::UploadedFile:0x007fcb4d8fc4b8 @tempfile=#<Tempfile:/tmp/RackMultipart20180421-20917-q1k51.csv>, @original_filename="test.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"test.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUserSession Exists (0.1ms)[0m  SELECT  1 AS one FROM "user_sessions" WHERE "user_sessions"."user_id" = ? AND "user_sessions"."session_id" = ? LIMIT 1  [["user_id", 1], ["session_id", "7b1c30c75758c498312019291fae9a4d93425d276c37035e65a6170837b3de08264b1ec434442aa6c67840a7eb8169b5cfc01439cc90345f907c5aa06e5193f45e30b74d6daf41bc2426b18ab10f7bc3ea2f229bbab0fa5b1005d6e8f0fd7e8edea37920d09bc62dd882e19af427824125c869fa87caa01d28291504a81161"]]
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.2ms)
+
+NoMethodError (undefined method `libraries' for #<User:0x007fcb4d905810>):
+  app/controllers/libraries_controller.rb:60:in `import_csv'
+
+
+  Rendered /home/holanta/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.4ms)
+  Rendered /home/holanta/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /home/holanta/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/holanta/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (19.1ms)
+  Rendered /home/holanta/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/holanta/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/holanta/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/holanta/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/holanta/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (16.6ms)
+  Rendered /home/holanta/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/holanta/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/holanta/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (33.5ms)
+
+
+Started POST "/libraries/import_csv" for 127.0.0.1 at 2018-04-21 15:16:17 +0530
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'registrations'` to `controller: 'registrations'`. (called from block (4 levels) in <top (required)> at /home/holanta/assignment/config/routes.rb:36)
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'registrations'` to `controller: 'registrations'`. (called from block (4 levels) in <top (required)> at /home/holanta/assignment/config/routes.rb:37)
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'registrations'` to `controller: 'registrations'`. (called from block (4 levels) in <top (required)> at /home/holanta/assignment/config/routes.rb:38)
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'registrations'` to `controller: 'registrations'`. (called from block (4 levels) in <top (required)> at /home/holanta/assignment/config/routes.rb:39)
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'registrations'` to `controller: 'registrations'`. (called from block (4 levels) in <top (required)> at /home/holanta/assignment/config/routes.rb:55)
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'registrations'` to `controller: 'registrations'`. (called from block (4 levels) in <top (required)> at /home/holanta/assignment/config/routes.rb:56)
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'registrations'` to `controller: 'registrations'`. (called from block (4 levels) in <top (required)> at /home/holanta/assignment/config/routes.rb:57)
+Processing by LibrariesController#import_csv as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QtA9K/pjk7djvldgOGHsG4POs7AqKztpx3o3dyoxfVITNTrO7F7GVHOo0IXY1+6t7YsAubVG0AlZ8B7J0RrxYw==", "file"=>#<ActionDispatch::Http::UploadedFile:0x007fcb4de58588 @tempfile=#<Tempfile:/tmp/RackMultipart20180421-20917-a4gu2y.csv>, @original_filename="test.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"test.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"submit"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUserSession Exists (0.2ms)[0m  SELECT  1 AS one FROM "user_sessions" WHERE "user_sessions"."user_id" = ? AND "user_sessions"."session_id" = ? LIMIT 1  [["user_id", 1], ["session_id", "7b1c30c75758c498312019291fae9a4d93425d276c37035e65a6170837b3de08264b1ec434442aa6c67840a7eb8169b5cfc01439cc90345f907c5aa06e5193f45e30b74d6daf41bc2426b18ab10f7bc3ea2f229bbab0fa5b1005d6e8f0fd7e8edea37920d09bc62dd882e19af427824125c869fa87caa01d28291504a81161"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLibrary Exists (0.2ms)[0m  SELECT  1 AS one FROM "libraries" WHERE "libraries"."ref_id" = '123' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "libraries" ("created_by", "ref_id", "purchased_on", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_by", 1], ["ref_id", "123"], ["purchased_on", "2018-04-21"], ["description", "asdfasdfasdfsdfasdf"], ["created_at", "2018-04-21 09:46:17.382582"], ["updated_at", "2018-04-21 09:46:17.382582"]]
+  [1m[35m (69.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLibrary Exists (0.1ms)[0m  SELECT  1 AS one FROM "libraries" WHERE "libraries"."ref_id" = '123' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLibrary Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "libraries" WHERE "libraries"."ref_id" = '1231313' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "libraries" ("created_by", "ref_id", "purchased_on", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_by", 1], ["ref_id", "1231313"], ["purchased_on", "2018-04-21"], ["description", "asdfasdfasdfasdfasdfsdf"], ["created_at", "2018-04-21 09:46:17.457924"], ["updated_at", "2018-04-21 09:46:17.457924"]]
+  [1m[36m (50.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLibrary Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "libraries" WHERE "libraries"."ref_id" = '123' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLibrary Exists (0.1ms)[0m  SELECT  1 AS one FROM "libraries" WHERE "libraries"."ref_id" = '123' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLibrary Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "libraries" WHERE "libraries"."ref_id" = '123' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLibrary Exists (0.2ms)[0m  SELECT  1 AS one FROM "libraries" WHERE "libraries"."ref_id" = '123234334' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "libraries" ("created_by", "ref_id", "purchased_on", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_by", 1], ["ref_id", "123234334"], ["purchased_on", "2018-04-21"], ["description", "asdfweafsdsdf"], ["created_at", "2018-04-21 09:46:17.518867"], ["updated_at", "2018-04-21 09:46:17.518867"]]
+  [1m[35m (94.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 266ms (ActiveRecord: 217.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-21 15:16:17 +0530
+Processing by LibrariesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUserSession Exists (0.1ms)[0m  SELECT  1 AS one FROM "user_sessions" WHERE "user_sessions"."user_id" = ? AND "user_sessions"."session_id" = ? LIMIT 1  [["user_id", 1], ["session_id", "7b1c30c75758c498312019291fae9a4d93425d276c37035e65a6170837b3de08264b1ec434442aa6c67840a7eb8169b5cfc01439cc90345f907c5aa06e5193f45e30b74d6daf41bc2426b18ab10f7bc3ea2f229bbab0fa5b1005d6e8f0fd7e8edea37920d09bc62dd882e19af427824125c869fa87caa01d28291504a81161"]]
+  [1m[36mLibrary Load (0.2ms)[0m  [1mSELECT "libraries".* FROM "libraries"[0m
+  Rendered libraries/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 15ms (Views: 12.7ms | ActiveRecord: 0.4ms)

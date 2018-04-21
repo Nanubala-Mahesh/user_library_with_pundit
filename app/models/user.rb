@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :confirmable
 
     validates_presence_of :name
+
+    has_many :libraries, foreign_key: "created_by"
     
 	def has_role?(role_in_question)
         type == role_in_question.capitalize.to_s

@@ -15,7 +15,13 @@ class Library < ActiveRecord::Base
 
 	def self.import(file)
 
+		# a = File.open("#{Rails.root}/test.csv")
+		# b = File.open("#{ENV['HOME']}/Desktop/test.csv")
+		# Rails.root.join('test.csv')
+
+		# a = [[1123,nil,1,'asdfasdfasdfsdfasdf'],[1123,nil,1,'asdfasdfasdfsdfasdf']]
 		CSV.foreach(file.path, headers: true) do |row|
+		# a.each do |row|
 			# binding.pry
 			library = Library.new
 			library.ref_id = row[0]
@@ -34,8 +40,22 @@ class Library < ActiveRecord::Base
 			
 			@errors #  <- need to return the @errors array 
 		end
-		puts @errors
+		# binding.pry
+		puts @errors.blank? ? 'Success' : @errors
 	end
 
 
 end
+
+
+# a || a = b
+
+
+
+# a=1, b=3
+# a=nil, b='n'
+# a=true b=false
+# a=false, b=true
+# a=false, b=1
+
+

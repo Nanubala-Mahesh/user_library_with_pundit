@@ -1,4 +1,4 @@
-class Api::V2::RegistrationsController < ApplicationController
+class Api::V2::RegistrationsController < ApiController
 	
 	def sign_up
 	    if params[:email].nil?

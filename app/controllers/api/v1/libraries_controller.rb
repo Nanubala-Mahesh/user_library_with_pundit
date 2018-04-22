@@ -1,7 +1,8 @@
-class Api::V1::LibrariesController < ApplicationController
+class Api::V1::LibrariesController < ApiController
 	before_action :check_for_valid_authtoken
 	before_action :set_library, only: [:show, :edit, :update, :destroy, :purchase]
 	skip_before_action :verify_authenticity_token
+	after_action  :verify_authorized
 
 	def index
 		@libraries = Library.all

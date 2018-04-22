@@ -1,7 +1,8 @@
-class Api::V2::LibrariesController < ApplicationController
+class Api::V2::LibrariesController < ApiController
 	before_action :check_for_valid_authtoken
 	before_action :set_library, only: [:show, :edit, :update, :destroy, :purchase]
 	skip_before_action :verify_authenticity_token
+	after_action :verify_authorized, except: :index
 
 	def index
 		@libraries = Library.all
@@ -21,8 +22,12 @@ class Api::V2::LibrariesController < ApplicationController
 	end
 
 	def create
+		authorize Library
 		@library = Library.new(library_params)
 		@library.created_by = @user.id
+
+		# authorize @library
+		# LibraryPolicy.new(@user, @library).create?
 		if @library.save
 			render :status => 400,
 		      	:json => {:message => 'created', :library => @library}

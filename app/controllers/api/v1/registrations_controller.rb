@@ -1,4 +1,4 @@
-class Api::V1::RegistrationsController < ApplicationController
+class Api::V1::RegistrationsController < ApiController
 	# skip_before_action :verify_authenticity_token
 	def sign_up
 		# binding.pry
@@ -19,7 +19,7 @@ class Api::V1::RegistrationsController < ApplicationController
 	    if params[:email]
 	      duplicate_user = User.find_by_email(params[:email])
 	      unless duplicate_user.nil?
-	        render :status => 409,
+	        render :status => 400,
 	        :json => {:message => 'Duplicate email. A user already exists with that email address.'}
 	        return
 	      end

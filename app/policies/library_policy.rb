@@ -27,9 +27,10 @@ class LibraryPolicy < ApplicationPolicy
     true
   end
   
-  def create? 	
+  def create?
+    # binding.pry 	
     if admin?
-      admin?
+      true
     elsif normal?          
       false
     end
@@ -62,6 +63,7 @@ class LibraryPolicy < ApplicationPolicy
   private
 
   def user_is_owner_of_record?
+    # binding.pry
   	@user == @record.user  	
   end
 
